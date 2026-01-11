@@ -1,11 +1,3 @@
-:root {
---ice: #f8f6f2; 
---reddish: #e9055b;
---dark-reddish: #bb064b;
---dark-gray: #4c4c4c;
---light-gray: #7b7b7b;
-}
-
 #root {
   max-width: 1920px;
   margin: 0 auto;
@@ -26,9 +18,6 @@
     margin: 0 auto;
     position: relative;
 }
-main {
-    margin: 10px 0;
-}
 
 .enabled {
     background-color: var(--reddish);
@@ -48,7 +37,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 30px;
+    border-bottom: 1px solid var(--light-gray);
+    padding-bottom: 10px;
 }
 
 .row_list {
@@ -56,7 +47,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--light-gray);
-    border-top: 1px solid var(--light-gray);
     padding: 18px 0;
     font-size: 21px;
     position: relative;
@@ -64,6 +54,11 @@ nav {
 .row_list div, nav div {
     padding: 0 10px;
     width: 12%;
+    text-align: center;
+    font-weight: 500;
+}
+nav div {
+    font-weight: 400;
 }
 .row_list:hover {
     background-color: var(--dark-gray);
@@ -72,6 +67,7 @@ nav {
 }
 nav div:first-child, .row_list div:first-child {
     width: 30%;
+    text-align: left;
 }
 nav div:last-child, .row_list div:last-child {
     width: 145px;
@@ -94,6 +90,7 @@ nav div:last-child, .row_list div:last-child {
 
 
 @media screen and (max-width: 800px) {
+
     nav {
         border-bottom: none;
         justify-content: end;
@@ -103,6 +100,11 @@ nav div:last-child, .row_list div:last-child {
     }
     nav div:last-child {
         display: block;
+        width: 100%;
+        padding: 0;
+    }
+    button {
+        width: 100%;
     }
     .row_list {
         flex-direction: column;
@@ -111,6 +113,7 @@ nav div:last-child, .row_list div:last-child {
     .row_list div, .row_list div:first-child, .row_list div:last-child {
         width: calc(100% - 27px);
         padding: 0 10px;
+        text-align: left;
     }
     .row_list div {
         margin-bottom: 10px;
