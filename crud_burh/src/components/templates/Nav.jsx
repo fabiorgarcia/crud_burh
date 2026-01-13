@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ButtonNew from "../molecules/ButtonNew";
 import styled from "styled-components";
 import NewUser from '../pages/NewUser';
+import DarkBg from '../atons/DarkBg';
 
 export const NavMaster = styled.nav `
     display: flex;
@@ -11,13 +12,18 @@ export const NavMaster = styled.nav `
     border-bottom: 1px solid var(--light-gray);
     padding-bottom: 10px;
 `
+export const DivClose = styled.div `
+    position: relative;
+    text-align: right;
+    cursor: pointer;
+`
+
 
 function Nav() {
   const [isVisible, setIsVisible] = useState(false);
   
-  const handleClick = () => {
-    setIsVisible(true);
-    console.log(isVisible);
+  const showForm = () => {
+    isVisible ? setIsVisible(false) : setIsVisible(true);
   }
   
     return (
@@ -27,11 +33,16 @@ function Nav() {
           <div>Altura</div>
           <div>Data de Nascimento</div>
           <div>Especial</div>
-          <div onClick={handleClick}><ButtonNew></ButtonNew></div>
+          <div onClick={showForm}><ButtonNew></ButtonNew></div>
         </NavMaster>
 
         {isVisible && (
-          <NewUser></NewUser>
+          <>
+          <DarkBg></DarkBg>
+          <div className='div-form'>
+            <NewUser isOpen={isVisible} onClose={() => setIsVisible(false)}></NewUser>
+          </div>
+          </>
         )}
       </>
     )

@@ -1,9 +1,11 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --white: #ffffff; 
+  --white: #ffffff;
+  --black: #000000; 
   --ice: #f8f6f2; 
   --reddish: #e9055b;
   --dark-reddish: #bb064b;
+  --gray: #666666;
   --dark-gray: #252525;
   --light-gray: #bdbdbd;
   --radius: 50;
@@ -48,6 +50,7 @@ button:hover {
 
 .material {
     font-size: 24px!important;
+    cursor: pointer;
 }
 
 .material-symbols-outlined {
@@ -67,26 +70,177 @@ button:hover {
 .circle-svg {
     margin: 0 auto;
 }
-
-
 .circle-svg circle {
-  stroke: red;
-  stroke-width: 4;
-  fill: transparent;
-  transform-origin: center;
-  stroke-dasharray: var(--circumference);
-  animation: spinner 2s ease-out infinite;
+    stroke: var(--reddish);
+    stroke-width: 4;
+    fill: transparent;
+    transform-origin: center;
+    stroke-dasharray: var(--circumference);
+    animation: spinner 2s ease-out infinite;
+}
+.processing circle {
+    stroke: var(--ice);
+}
+
+.icon-close {
+    font-size: 45px;
+    color: var(--gray);
+}
+.icon-close:hover {
+    color: var(--black);
+}
+
+.div-form {
+    position: fixed;
+    background-color: var(--white);
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    padding: 40px;
+    animation-name: slideRightToLeft;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; 
+}
+
+label {
+    display: block;
+}
+input {
+    width: 100%;
+    min-width: 150px;
+    border: none;
+    border-bottom: 3px solid var(--light-gray);
+    padding: 20px 0px;
+    font-size: 24px;
+    font-weight: 500;
+    outline: none;
+}
+input[type="date"] {
+    padding: 19px 0;
+}
+input:hover {
+    border-bottom: 3px solid var(--gray);
+}
+input:focus {
+    border-bottom: 3px solid var(--black);
+}
+
+.success-animation { 
+    margin: 0 auto;
+}
+
+.checkmark {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: var(--ice);
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px var(--ice);
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    position:relative;
+    top: 5px;
+    right: 5px;
+   margin: 0 auto;
+}
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: var(--ice);
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+ 
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px var(--reddish);
+    }
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes spinner {
   from {
     stroke-dashoffset: var(--circumference);
-    stroke: var(--reddish);
     transform: rotateZ(0deg)
   }
   to {
     stroke-dashoffset: calc(var(--circumference) * -1);
-    stroke: var(--dark-reddish);
     transform: rotateZ(720deg)
   }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+    input {
+        font-size: 22px;
+    }
+    .div-form {
+        width: calc(100% - 80px);
+    }
+    input {
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .div-form {
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+    input {
+        min-width: 60px;
+    }
 }
