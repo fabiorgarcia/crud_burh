@@ -3,45 +3,6 @@
   margin: 0 auto;
   padding: 0;
 }
-
-.logo {
-    font-family: "League Gothic", sans-serif;
-    font-size: 60px;
-    background-color: var(--reddish);
-    color: var(--ice);
-    padding: 5px 15px;
-    display: -webkit-inline-box;
-}
-.content {
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.enabled {
-    background-color: var(--reddish);
-    color: var(--ice);
-    border-color: var(--reddish);
-}
-.disabled {
-    background-color: var(--ice);
-    color: var(--dark-gray);
-    border-color: var(--light-gray);
-}
-.icon {
-    font-size: 16px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 30px;
-    border-bottom: 1px solid var(--light-gray);
-    padding-bottom: 10px;
-}
-
 .row_list {
     display: flex;
     justify-content: space-between;
@@ -109,6 +70,8 @@ nav div:last-child, .row_list div:last-child {
     .row_list {
         flex-direction: column;
         align-items: self-start;
+        background-color: var(--white);
+        margin-bottom: 12px;
     }
     .row_list div, .row_list div:first-child, .row_list div:last-child {
         width: calc(100% - 27px);
@@ -120,6 +83,7 @@ nav div:last-child, .row_list div:last-child {
     }
     .row_list div span {
         display: block;
+        padding: 1px 0;
     }
     .row_list div:last-child {
         position: absolute;

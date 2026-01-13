@@ -1,44 +1,39 @@
 import { useState } from 'react'
 import './App.css'
+import Header from './components/templates/Header';
+import Loading from './components/organisms/Loading';
+import RadioButtonUnchecked from './components/atons/RadioButtonUnchecked';
+import RadioButtonChecked from './components/atons/RadioButtonChecked';
+import Arow from './components/atons/Arow';
+import Nav from './components/templates/Nav';
+
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
 
   const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-  const testWait = async () => {
+  const loadWait = async () => {
     await wait(2000); 
     setIsVisible(true);
   };
 
-testWait();
+  loadWait();
 
   return (
     <>
-      <header>
-          <div className="logo">/CRUD</div>
-      </header>
+      <Header></Header>
 
       
       {!isVisible && (
-        <div className='loading'>
-          <svg className="circle-svg" height="200" width="200">
-            <circle cx="100" cy="100" r="50"></circle>
-          </svg>
-        </div>
+        <Loading></Loading>
       )}
       
       {isVisible && (
-        <nav>
-          <div>Nome</div>
-          <div>Altura</div>
-          <div>Data de Nascimento</div>
-          <div>Especial</div>
-          <div><button className="enabled"><span className="material-symbols-outlined icon">add</span> Novo</button></div>
-        </nav>
-      )}
 
-      {isVisible && (
+        <>
+        <Nav></Nav>
+
         <main>
           <div className='row_list'>
             <div>
@@ -55,9 +50,9 @@ testWait();
             </div>
             <div>
               <span>Especial</span>
-              <span className="material material-symbols-outlined">radio_button_unchecked</span>
+              <RadioButtonUnchecked></RadioButtonUnchecked>
             </div>
-            <div><div className='icon_arow'><span className="material material-symbols-outlined">arrow_outward</span></div></div>
+            <div><Arow></Arow></div>
           </div>
           <div className='row_list'>
             <div>
@@ -74,9 +69,9 @@ testWait();
             </div>
             <div>
               <span>Especial</span>
-              <span className="material material-symbols-outlined">radio_button_checked</span>
+              <RadioButtonChecked></RadioButtonChecked>
             </div>
-            <div><div className='icon_arow'><span className="material material-symbols-outlined">arrow_outward</span></div></div>
+            <div><Arow></Arow></div>
           </div>
           <div className='row_list'>
             <div>
@@ -93,11 +88,13 @@ testWait();
             </div>
             <div>
               <span>Especial</span>
-              <span className="material material-symbols-outlined">radio_button_unchecked</span>
+              <RadioButtonChecked></RadioButtonChecked>
             </div>
-            <div><div className='icon_arow'><span className="material material-symbols-outlined">arrow_outward</span></div></div>
+            <div><Arow></Arow></div>
           </div>
         </main>
+
+        </>
       )}
 
     </>
