@@ -37,15 +37,15 @@ function App() {
         <main>
           <div className='row_list'>
             <div>
-              <span>Nome</span>
+              <span>Produto</span>
               Fabio Rodrigues Garcia
             </div>
             <div>
-              <span>Altura</span>
+              <span>Unidades</span>
               1,65
             </div>
             <div>
-              <span>Data de Nascimento</span>
+              <span>Data de Publicação</span>
               27/01/1976
             </div>
             <div>
@@ -56,15 +56,15 @@ function App() {
           </div>
           <div className='row_list'>
             <div>
-              <span>Nome</span>
+              <span>Produto</span>
               Fabio Rodrigues Garcia
             </div>
             <div>
-              <span>Altura</span>
+              <span>Unidades</span>
               1,65
             </div>
             <div>
-              <span>Data de Nascimento</span>
+              <span>Data de Publicação</span>
               27/01/1976
             </div>
             <div>
@@ -75,15 +75,15 @@ function App() {
           </div>
           <div className='row_list'>
             <div>
-              <span>Nome</span>
+              <span>Produto</span>
               Fabio Rodrigues Garcia
             </div>
             <div>
-              <span>Altura</span>
+              <span>Unidades</span>
               1,65
             </div>
             <div>
-              <span>Data de Nascimento</span>
+              <span>Data de Publicação</span>
               27/01/1976
             </div>
             <div>

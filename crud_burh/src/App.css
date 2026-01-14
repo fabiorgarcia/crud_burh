@@ -1,5 +1,5 @@
 #root {
-  max-width: 1920px;
+  max-width: 1800px;
   margin: 0 auto;
   padding: 0;
 }
@@ -25,6 +25,9 @@ nav div {
     background-color: var(--dark-gray);
     color: var(--ice);
     cursor: pointer;
+}
+.row_list:hover svg path {
+    fill: var(--ice);
 }
 nav div:first-child, .row_list div:first-child {
     width: 30%;
@@ -61,7 +64,6 @@ nav div:last-child, .row_list div:last-child {
     top: 0;
     left: 0;
 }
-
 
 
 

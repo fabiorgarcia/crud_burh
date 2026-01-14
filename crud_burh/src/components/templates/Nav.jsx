@@ -1,22 +1,8 @@
 import { useState } from 'react'
 import ButtonNew from "../molecules/ButtonNew";
-import styled from "styled-components";
 import NewUser from '../pages/NewUser';
 import DarkBg from '../atons/DarkBg';
-
-export const NavMaster = styled.nav `
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 30px;
-    border-bottom: 1px solid var(--light-gray);
-    padding-bottom: 10px;
-`
-export const DivClose = styled.div `
-    position: relative;
-    text-align: right;
-    cursor: pointer;
-`
+import { NavMaster } from '../../Styles';
 
 
 function Nav() {
@@ -29,9 +15,9 @@ function Nav() {
     return (
       <>
         <NavMaster>
-          <div>Nome</div>
-          <div>Altura</div>
-          <div>Data de Nascimento</div>
+          <div>Produto</div>
+          <div>Unidades</div>
+          <div>Data de Publicação</div>
           <div>Especial</div>
           <div onClick={showForm}><ButtonNew></ButtonNew></div>
         </NavMaster>
