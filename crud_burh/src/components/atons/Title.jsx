@@ -1,8 +1,8 @@
 import { TitleH1 } from "../../Styles"
 
-function Title() {
+function Title({text}) {
     return (
-        <TitleH1>Produtos</TitleH1>
+        <TitleH1>{text}</TitleH1>
     )
 }
 

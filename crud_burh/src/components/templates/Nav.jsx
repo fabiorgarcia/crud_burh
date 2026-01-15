@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import ButtonNew from "../molecules/ButtonNew";
-import NewUser from '../pages/NewUser';
+import NewProd from '../pages/NewProd';
 import DarkBg from '../atons/DarkBg';
 import { NavMaster } from '../../Styles';
 
 
-function Nav() {
+function Nav({uploadList}) {
   const [isVisible, setIsVisible] = useState(false);
   
   const showForm = () => {
@@ -15,7 +15,7 @@ function Nav() {
     return (
       <>
         <NavMaster>
-          <div>Produto</div>
+          <div>Produto⏷</div>
           <div>Unidades</div>
           <div>Data de Publicação</div>
           <div>Especial</div>
@@ -26,7 +26,7 @@ function Nav() {
           <>
           <DarkBg></DarkBg>
           <div className='div-form'>
-            <NewUser isOpen={isVisible} onClose={() => setIsVisible(false)}></NewUser>
+            <NewProd isOpen={isVisible} onClose={() => setIsVisible(false)} uploadList={uploadList}></NewProd>
           </div>
           </>
         )}

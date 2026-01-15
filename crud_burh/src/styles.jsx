@@ -47,8 +47,9 @@ export const MessageError = styled.nav `
 `
 export const TitleH1 = styled.h1 `
     color: var(--reddish);
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 500;
+    margin: 0 0 15px 0;
 `
 export const Enabled = styled.button `
     background-color: var(--reddish);
@@ -69,4 +70,52 @@ export const Logotipo = styled.div `
     color: var(--ice);
     padding: 5px 15px;
     display: -webkit-inline-box;
+`
+export const DivEdit = styled.div `
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+`
+export const DivSaveing = styled.div `
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: var(--reddish);
+    top: 0;
+    left: 0;
+`
+export const DivDelete = styled.div `
+    display: flex;
+    flex-direction: column;
+    color: var(--dark-gray);
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: var(--ice);
+    top: 0;
+    left: 0;
+`
+export const DivDefault = styled.div `
+    padding: 20px 10px;
+`
+export const DarkBackground = styled.div `
+    width: 100% !important;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards; 
 `
