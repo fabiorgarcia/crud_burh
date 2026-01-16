@@ -1,4 +1,4 @@
-Sistema de CRUD utilizando as seguintes tecnologias:
+# Sistema de CRUD utilizando as seguintes tecnologias:
 
 - React: SPA
 - Vite: Ferramenta de Build moderna e rápida para empacotar e servir seu código, substituindo ferramentas mais antigas como o Webpack.
@@ -8,13 +8,14 @@ Sistema de CRUD utilizando as seguintes tecnologias:
 - Axios: Biblioteca popular e leve, baseada em promessas, usada para fazer requisições HTTP (GET, POST, etc.) de forma fácil e eficiente.
 - .env: Encapsulamento de dados sensíveis separados do código-fonte para segurança e flexibilidade, evitando que segredos sejam expostos.
 - Atomic Design: Metodologia para criar sistemas de design de interfaces (UI) de forma hierárquica e modular, inspirada na química, que divide os componentes de uma interface em cinco níveis: Átomos, Moléculas, Organismos, Templates e Páginas.
+- Material Design: Biblioteca
 - NPM (Node Package Manager): Gerenciador de pacotes padrão para projetos Node.js.
 - HTML semântico: Tags que descrevem o significado e a função do conteúdo.
 - Mobile first, layout responsivo.
 
 
 
-Instruções para Inicialização do Projeto:
+# Instruções para Inicialização do Projeto:
 
 - git clone https://github.com/fabiorgarcia/crud_burh.git
 - cd crud_burh
